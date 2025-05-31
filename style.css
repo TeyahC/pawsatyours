@@ -33,11 +33,10 @@ h6 {
 
 #menuBtn:hover,
 #menuBtn:focus {
-  background-color: rgba(255, 182, 193, 0.5); 
+  background-color: rgba(255, 182, 193, 0.5);
   color: #fff;
   outline: none;
 }
-
 
 /* Overlay menu */
 .overlay {
@@ -82,9 +81,9 @@ h6 {
 }
 
 .book-button {
-  background-color: rgba(255, 182, 193, 0.5); 
-  border: 2px solid white; 
-  color: white; 
+  background-color: rgba(255, 182, 193, 0.5);
+  border: 2px solid white;
+  color: white;
   text-decoration: none;
 }
 
@@ -104,8 +103,6 @@ button a {
   max-width: 100%;
   height: auto;
 }
-
-/* Existing site-wide styles assumed to be above */
 
 nav ul {
   display: flex;
@@ -165,28 +162,40 @@ h2, h3, h4 {
   }
 }
 
-.catalog-image {
-  width: 100%; /* full width on small screens */
-  height: auto;
-}
-
+/* Catalogue page photo styling */
 .photo-trio {
-  display: flex;
-  justify-content: center; /* center images horizontally */
-  gap: 15px; /* space between the photos */
-  margin-top: 10px; /* optional space above */
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
 }
 
-.photo-trio img {
-  max-width: 30%;  /* control max size */
-  height: auto;
-  border-radius: 8px; /* optional: rounded corners */
-  object-fit: cover; /* keep aspect ratio */
-}
-
-
-@media(min-width: 768px) { /* or your laptop breakpoint */
+/* On very small screens (phones), photos get bigger */
+@media (max-width: 600px) {
+  .photo-trio img {
+    max-width: 90%; /* nice big on phones */
+  }
   .catalog-image {
-    max-width: 300px; /* smaller on laptops/desktops */
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* On larger screens (tablets and up), photos get smaller */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .photo-trio img {
+    max-width: 45%; /* medium size on tablets */
+  }
+  .catalog-image {
+    max-width: 400px;
+  }
+}
+
+/* On laptops and desktops, photos smaller but nicely spaced */
+@media (min-width: 1025px) {
+  .photo-trio img {
+    max-width: 30%; /* smaller on laptops/desktops */
+  }
+  .catalog-image {
+    max-width: 300px;
   }
 }
