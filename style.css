@@ -178,7 +178,7 @@ h2, h3, h4 {
 }
 
 .photo-trio img {
-  max-width: 150px;  /* control max size */
+  max-width: 30%;  /* control max size */
   height: auto;
   border-radius: 8px; /* optional: rounded corners */
   object-fit: cover; /* keep aspect ratio */
