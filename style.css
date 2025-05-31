@@ -1,0 +1,166 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+#menuBtn {
+  font-size: 22px;
+  cursor: pointer;
+  position: fixed;
+  top: 25px;
+  left: 20px;
+  color: #000;
+  background-color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  z-index: 1001;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+#menuBtn:hover,
+#menuBtn:focus {
+  background-color: rgba(255, 182, 193, 0.5); 
+  color: #fff;
+  outline: none;
+}
+
+
+/* Overlay menu */
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+.book-button {
+  background-color: rgba(255, 182, 193, 0.5); 
+  border: 2px solid white; 
+  color: white; 
+  text-decoration: none;
+}
+
+.book-button:hover,
+.book-button:focus {
+  background-color: #d32f2f;
+  outline: none;
+}
+
+button a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* For the price list image, make it responsive */
+#Price\ List img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Existing site-wide styles assumed to be above */
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+nav li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: bold;
+}
+
+nav li a.active {
+  color: #f15b5b;
+}
+
+main {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+h2, h3, h4 {
+  color: #333;
+  margin-top: 2rem;
+}
+
+.photo-pair,
+.photo-trio {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.photo-pair img,
+.photo-trio img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive stacking on small screens */
+@media (max-width: 600px) {
+  .photo-pair,
+  .photo-trio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
