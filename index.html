@@ -47,6 +47,25 @@
     function closeNav() {
       document.getElementById("myNav").style.width = "0%";
     }
+
+    let slideIndex = 0;
+
+    function showSlidesAuto() {
+      let i;
+      let slides = document.getElementsByClassName("mySlides");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  // hide all slides
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;  // loop back to first slide
+      }
+      slides[slideIndex - 1].style.display = "block";  // show current slide
+      setTimeout(showSlidesAuto, 3000); // change slide every 3 seconds
+    }
+    
+    // Start the slideshow automatically
+    showSlidesAuto();
   </script>
 </head>
 
