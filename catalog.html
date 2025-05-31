@@ -1,146 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Lovely Customers | Paws at Yours</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+  <!-- Internal CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <header>
-    <h1>Paws at Yours</h1>
-    <nav>
-      <ul>
-        <a href="index.html" onclick="closeNav()">Home</a>
+
+<body class="w3-light-white w3-margin">
+
+  <!-- Overlay Menu -->
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="index.html" onclick="closeNav()">Home</a>
       <a href="AboutMe.html" onclick="closeNav()">About Me</a>
-      <a href="" onclick="closeNav()">The Cat-alogue</a>
+      <a href="catalog.html" onclick="closeNav()">The Cat-alogue</a>
       <a href="pricepage.html" onclick="closeNav()">Price List</a>
       <a href="contact.html" onclick="closeNav()">Contact</a>
-      </ul>
-    </nav>
-  </header>
-   <!-- Navigation Bar -->
-  <div class="w3-bar w3-white w3-text-black">
-    <h2 class="w3-left w3-tag w3-pale-red w3-round" style="margin-left: 175px;">Paws At Yours</h2>
-    <a
-      href="contact.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >CONTACT</a
-    >
-      <a
-      href=""
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >THE CAT-ALOGUE</a
-    >
-    <a
-      href="pricepage.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >PRICE LIST</a
-    >
-    <a
-      href="AboutMe.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >ABOUT ME</a
-    >
-    
-    <a
-      href="index.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >HOME</a
-    >
+    </div>
   </div>
 
+  <!-- Menu Button -->
+  <div id="menuBtn" onclick="openNav()" aria-label="Open menu" role="button" tabindex="0">
+    &#9776; Menu
+  </div>
 
-  <main>
-    <h2>Our Lovely Customers</h2>
-    <p>Meet some of the wonderful cats I’ve had the pleasure of caring for through Paws at Yours.</p>
+  <!-- Navigation Bar -->
+  <div class="w3-bar w3-white w3-text-black">
+    <h2 class="w3-left w3-tag w3-pale-red w3-round" style="margin-left: 175px;">Paws At Yours</h2>
+    <a href="contact.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top: 10px;">CONTACT</a>
+    <a href="catalog.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top: 10px;">THE CAT-ALOGUE</a>
+    <a href="pricepage.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top: 10px;">PRICE LIST</a>
+    <a href="AboutMe.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top: 10px;">ABOUT ME</a>
+    <a href="index.html" class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right" style="margin-top: 10px;">HOME</a>
+  </div>
 
-    <section>
-      <h3>Regulars</h3>
+  <!-- Page Content Container -->
+  <div class="w3-content" style="max-width: 1000px; margin-top: 20px;">
 
-      <h4>Roger & Raymond</h4>
-      <img src="images/Roger and Raymond.jpg" alt="Roger and Raymond cats" class="single-photo" />
-      <p>Roger and Raymond are two incredibly sweet and affectionate boys I’ve been looking after since April 2024. They’re very regular customers now, and it’s always a joy to see them!</p>
+    <main class="w3-padding-large w3-white w3-round w3-card-4">
 
-      <h4>Twiggy & Indie</h4>
-      <p>I’ve had the pleasure of caring for Twiggy and Indie quite a few times now. Indie absolutely loves affection, while Twiggy is a little on the shy side—but still enjoys a good cuddle when she warms up to you.</p>
-      <div class="photo-pair">
-        <img src="images/Twiggy.jpg" alt="Twiggy the cat" />
-        <img src="images/Indie.jpg" alt="Indie the cat" />
-      </div>
+      <h2 class="w3-center w3-text-pale-red">Our Lovely Customers</h2>
+      <p class="w3-center w3-margin-bottom">Meet some of the wonderful cats I’ve had the pleasure of caring for through Paws at Yours.</p>
 
-      <h4>Turbo</h4>
-      <img src="images/Turbo.jpg" alt="Turbo the Maine Coon cat" class="single-photo" />
-      <p>Turbo is a Maine Coon just like my own cat, so we bonded instantly. He’s full of cuddles and affection—an absolutely adorable boy.</p>
+      <!-- Regulars Section -->
+      <section>
+        <h3>Regulars</h3>
 
-      <h4>Keira</h4>
-      <img src="images/Keira.jpg" alt="Keira the cat" class="single-photo" />
-      <p>Keira always makes me smile. Every time I walk in, she greets me right away—it’s the cutest thing! I’ve looked after her a few times now and she’s definitely one of my favourites.</p>
+        <h4>Roger & Raymond</h4>
+        <img src="images/Roger and Raymond.jpg" alt="Roger and Raymond cats" class="w3-image w3-margin-bottom" style="max-width:100%; height:auto;" />
+        <p>Roger and Raymond are two incredibly sweet and affectionate boys I’ve been looking after since April 2024. They’re very regular customers now, and it’s always a joy to see them!</p>
 
-      <h4>Mali & Lola</h4>
-      <img src="images/Mali.jpg" alt="Mali the cat" class="single-photo" />
-      <p>Mali and Lola are a little different—they're part of my weekly routine! I visit them on the same days every week. You’ll only spot Mali here, as Lola (a dog) isn’t too keen on me, but Mali more than makes up for it with her endless cuddles.</p>
-    </section>
+        <h4>Twiggy & Indie</h4>
+        <p>I’ve had the pleasure of caring for Twiggy and Indie quite a few times now. Indie absolutely loves affection, while Twiggy is a little on the shy side—but still enjoys a good cuddle when she warms up to you.</p>
+        <div class="w3-row-padding w3-margin-bottom">
+          <div class="w3-half">
+            <img src="images/Twiggy.jpg" alt="Twiggy the cat" class="w3-image" />
+          </div>
+          <div class="w3-half">
+            <img src="images/Indie.jpg" alt="Indie the cat" class="w3-image" />
+          </div>
+        </div>
 
-    <section>
-      <h3>The Kittens</h3>
-      <p>Over the years, I’ve had the special opportunity to care for some very young kittens. These experiences were truly heartwarming and unforgettable.</p>
+        <h4>Turbo</h4>
+        <img src="images/Turbo.jpg" alt="Turbo the Maine Coon cat" class="w3-image w3-margin-bottom" />
+        <p>Turbo is a Maine Coon just like my own cat, so we bonded instantly. He’s full of cuddles and affection—an absolutely adorable boy.</p>
 
-      <h4>Cookie</h4>
-      <img src="images/Cookie.jpg" alt="Cookie the kitten" class="single-photo" />
-      <p>Cookie was a tiny 10-week-old kitten who stayed in my home for a week while her owners were away. Because of her age, I offered a more hands-on service at the time. While it’s not something I accommodate now, it worked perfectly back then.</p>
+        <h4>Keira</h4>
+        <img src="images/Keira.jpg" alt="Keira the cat" class="w3-image w3-margin-bottom" />
+        <p>Keira always makes me smile. Every time I walk in, she greets me right away—it’s the cutest thing! I’ve looked after her a few times now and she’s definitely one of my favourites.</p>
 
-      <h4>Merlin</h4>
-      <img src="images/Merlin.jpg" alt="Merlin the kitten" class="single-photo" />
-      <p>At just 5 months old, Merlin was the perfect mix of playful and cuddly. I visited him three times a day, and he brought so much joy each time.</p>
+        <h4>Mali & Lola</h4>
+        <img src="images/Mali.jpg" alt="Mali the cat" class="w3-image w3-margin-bottom" />
+        <p>Mali and Lola are a little different—they're part of my weekly routine! I visit them on the same days every week. You’ll only spot Mali here, as Lola (a dog) isn’t too keen on me, but Mali more than makes up for it with her endless cuddles.</p>
+      </section>
 
-      <h4>Rothko</h4>
-      <img src="images/Rothko.jpg" alt="Rothko the kitten" class="single-photo" />
-      <p>Rothko was only 6 months old when I looked after him. He followed me everywhere while I sorted his food and litter—it was honestly the cutest thing.</p>
+      <!-- Kittens Section -->
+      <section>
+        <h3>The Kittens</h3>
+        <p>Over the years, I’ve had the special opportunity to care for some very young kittens. These experiences were truly heartwarming and unforgettable.</p>
 
-      <h4>Stormi & Her Kittens</h4>
-      <img src="images/Stormi&Kittens.jpg" alt="Stormi and her kittens" class="single-photo" />
-      <p>Stormi, an 18-month-old cat, had a surprise litter of 4-week-old kittens right before her owners had to attend a wedding. I stayed overnight for two days to help out. It was a big responsibility—I weighed the kittens regularly to ensure they were growing well and updated their owners with everything.</p>
-    </section>
+        <h4>Cookie</h4>
+        <img src="images/Cookie.jpg" alt="Cookie the kitten" class="w3-image w3-margin-bottom" />
+        <p>Cookie was a tiny 10-week-old kitten who stayed in my home for a week while her owners were away. Because of her age, I offered a more hands-on service at the time. While it’s not something I accommodate now, it worked perfectly back then.</p>
 
-    <section>
-      <h3>Other Cats</h3>
+        <h4>Merlin</h4>
+        <img src="images/Merlin.jpg" alt="Merlin the kitten" class="w3-image w3-margin-bottom" />
+        <p>At just 5 months old, Merlin was the perfect mix of playful and cuddly. I visited him three times a day, and he brought so much joy each time.</p>
 
-      <h4>Tilly & Tabby</h4>
-      <div class="photo-pair">
-        <img src="images/Tilly.jpg" alt="Tilly the cat" />
-        <img src="images/Tabby.jpg" alt="Tabby the cat" />
-      </div>
-      <p>Tilly and Tabby are two cats I’ve looked after a couple of times. Tilly was very shy and preferred to stay hidden, while Tabby enjoyed a bit of affection before dinner.</p>
+        <h4>Rothko</h4>
+        <img src="images/Rothko.jpg" alt="Rothko the kitten" class="w3-image w3-margin-bottom" />
+        <p>Rothko was only 6 months old when I looked after him. He followed me everywhere while I sorted his food and litter—it was honestly the cutest thing.</p>
 
-      <h4>Toby</h4>
-      <img src="images/Toby.jpg" alt="Toby the cat" class="single-photo" />
-      <p>Toby was a one-day visit while his owners were away for the weekend. I stayed for an hour to keep him company and top up his food. He spent the entire time curled up on my lap—it was the sweetest thing!</p>
+        <h4>Stormi & Her Kittens</h4>
+        <img src="images/Stormi&Kittens.jpg" alt="Stormi and her kittens" class="w3-image w3-margin-bottom" />
+        <p>Stormi, an 18-month-old cat, had a surprise litter of 4-week-old kittens right before her owners had to attend a wedding. I stayed overnight for two days to help out. It was a big responsibility—I weighed the kittens regularly to ensure they were growing well and updated their owners with everything.</p>
+      </section>
 
-      <h4>Lilo & Stitch</h4>
-      <div class="photo-pair">
-        <img src="images.Lilo.jpg" alt="Lilo the cat" />
-        <img src="images/Stitch.jpg" alt="Stitch the cat" />
-      </div>
-      <p>Lilo and Stitch were some of my very first customers. They were both young, playful, and full of character—I absolutely loved looking after them.</p>
+      <!-- Other Cats Section -->
+      <section>
+        <h3>Other Cats</h3>
 
-      <h4>Coco, Max & Puss Puss</h4>
-      <p>This lovely trio live together in the same home. Puss Puss preferred to keep her distance, Max was glued to me and constantly wanted strokes, and Coco was
-      <div class="photo-trio">
-        <img src="images/Coco.jpg" alt="Coco the cat" />
-        <img src="images/Max.jpg" alt="Max the cat" />
-        <img src="images/Puss Puss.jpg" alt="Puss Puss the cat" />
-      </div>
-    </section>
-  </main>
+        <h4>Tilly & Tabby</h4>
+        <div class="w3-row-padding w3-margin-bottom">
+          <div class="w3-half">
+            <img src="images/Tilly.jpg" alt="Tilly the cat" class="w3-image" />
+          </div>
+          <div class="w3-half">
+            <img src="images/Tabby.jpg" alt="Tabby the cat" class="w3-image" />
+          </div>
+        </div>
+        <p>Tilly and Tabby are two cats I’ve looked after a couple of times. Tilly was very shy and preferred to stay hidden, while Tabby enjoyed a bit of affection before dinner.</p>
 
-  <footer>
-    <p>2025 Paws at Yours | Cat Sitting with Love</p>
-  </footer>
+        <h4>Toby</h4>
+        <img src="images/Toby.jpg" alt="Toby the cat" class="w3-image w3-margin-bottom" />
+        <p>Toby is a very vocal cat. Whenever I came by, he was quick to make his presence known—and his owners really appreciated that I gave him lots of attention.</p>
+
+        <h4>Faith</h4>
+        <img src="images/Faith.jpg" alt="Faith the cat" class="w3-image w3-margin-bottom" />
+        <p>Faith, a 10-year-old cat, was a sweetheart. She had a big personality and was a joy to care for.</p>
+      </section>
+
+      <p class="w3-small w3-center w3-margin-top">And many more happy cats I’ve loved caring for over the years!</p>
+
+    </main>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function openNav() {
+      document.getElementById("myNav").style.width = "100%";
+    }
+
+    function closeNav() {
+      document.getElementById("myNav").style.width = "0%";
+    }
+  </script>
 </body>
 </html>
