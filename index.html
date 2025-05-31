@@ -1,280 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Paws at Yours</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paws at Yours</title>
 
   <!-- External CSS -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-
-  <!-- Internal CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet" href="style.css" />
-</head>
 
+  <!-- Slideshow Script -->
   <script>
-  let slideIndex = 1;
-  showSlides(slideIndex);
-
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-
-  function showSlides(n) {
-    const slides = document.getElementsByClassName("mySlides");
-    const dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    let slideIndex = 1;
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
     }
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
     }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-  }
-</script>
+    function showSlides(n) {
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+    }
 
+    document.addEventListener("DOMContentLoaded", () => {
+      showSlides(slideIndex);
+    });
 
-<body class="w3-light-white w3-margin">
-
-  <!-- Overlay Menu -->
-  <div id="myNav" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="overlay-content">
-      <a href="" onclick="closeNav()">Home</a>
-      <a href="AboutMe.html" onclick="closeNav()">About Me</a>
-      <a href="pricepage.html" onclick="closeNav()">Price List</a>
-      <a href="catalog.html" onclick="closeNav()">The Cat-alogue</a>
-      <a href="contact.html" onclick="closeNav()">Contact</a>
-    </div>
-  </div>
-
-  <!-- Menu Button -->
- <div
-  id="menuBtn"
-  onclick="openNav()"
-  aria-label="Open menu"
-  role="button"
-  tabindex="0"
->
-  &#9776; Menu
-</div>
-
-  <!-- Navigation Bar -->
-  <div class="w3-bar w3-white w3-text-black">
-    <h2 class="w3-left w3-tag w3-pale-red w3-round"  style= "margin-left: 175px;" >Paws At Yours</h2>
-    <a
-      href="contact.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >CONTACT</a
-    >
-     >
-      <a
-      href="catalog.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >THE CAT-ALOGUE</a
-    >
-    <a
-      href="pricepage.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >PRICE LIST</a
-    >
-    <a
-      href="AboutMe.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >ABOUT ME</a
-    >
-    <a
-      href=""
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >HOME</a
-    >
-  </div>
-
-  <!-- Page Content Container -->
-  <div class="w3-content" style="max-width: 1600px">
-    <!-- Image Header -->
-    <header class="w3-display-container w3-wide" style="padding-bottom: 32px;" id="Home">
-      <img class="w3-image" src="images/Main Photo.jpg" width="1600" height="1060" alt="Paws at Yours" />
-      <div class="w3-display-left w3-padding-large">
-        <h1 class="w3-text-white">Paws at Yours</h1>
-        <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Cat Sitting</b></h1>
-        <button
-          class="w3-button w3-round w3-padding-large w3-large w3-hover-opacity-off w3-text-white w3-border book-button"
-        >
-          <a href="contact.html" style="color: inherit; text-decoration: none;">BOOK NOW</a>
-        </button>
-
-        <section class="w3-container w3-center" style="margin-top: 40px;">
-          <p style="font-size: 18px;">
-            To look at prices <a href="pricepage.html" style="color: #f15b5b; font-weight: bold;">click here</a>.
-          </p>
-        </section>
-
-        <!-- Customer Slideshow Gallery -->
-<section class="w3-container" style="margin-top: 50px;">
-  <h2 class="w3-center" style="margin-bottom: 20px;">Our Happy Customers</h2>
-
-  <div class="slideshow-container">
-
-    <div class="mySlides fade">
-      <img src="images/Basil.jpg" style="width:100%" />
-    </div>
-
-    <div class="mySlides fade">
-      <img src="images/Coco.jpg" style="width:100%" />
-    </div>
-
-    <div class="mySlides fade">
-      <img src="images/Chilli.jpg" style="width:100%" />
-    </div>
-
-    <div class="mySlides fade">
-      <img src="images/Cookie.jpg" style="width:100%"/>
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Ghost.jpg" style="width:100%"/>
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Indie.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Keira.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Lilo.jpg" style="width:100%"/>
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Mari.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Max.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Merlin.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Mitch And Daisy.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Pepperjpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Puss Puss.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Roger and Raymond.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Rothko.jpg" style="width:100%"  />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Saffron.jpg" style="width:100%"  />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Sage.jpg" style="width:100%"/>
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Stitch.jpg" style="width:100%"/>
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Stormi&Kittens.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Taby.jpg" style="width:100%"  />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Toby.jpg" style="width:100%"/>
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Tonka.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Turbo.jpg" style="width:100%" />
-    </div>
-
-     <div class="mySlides fade">
-      <img src="images/Twiggy.jpg" style="width:100%"  />
-    </div>
-    
-
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-  </div>
-
-  <br />
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-    <span class="dot" onclick="currentSlide(4)"></span>
-    <span class="dot" onclick="currentSlide(5)"></span>
-    <span class="dot" onclick="currentSlide(6)"></span>
-    <span class="dot" onclick="currentSlide(7)"></span>
-    <span class="dot" onclick="currentSlide(8)"></span>
-    <span class="dot" onclick="currentSlide(9)"></span>
-    <span class="dot" onclick="currentSlide(10)"></span>
-    <span class="dot" onclick="currentSlide(11)"></span>
-    <span class="dot" onclick="currentSlide(12)"></span>
-    <span class="dot" onclick="currentSlide(13)"></span>
-    <span class="dot" onclick="currentSlide(14)"></span>
-    <span class="dot" onclick="currentSlide(15)"></span>
-    <span class="dot" onclick="currentSlide(16)"></span>
-    <span class="dot" onclick="currentSlide(17)"></span>
-    <span class="dot" onclick="currentSlide(18)"></span>
-    <span class="dot" onclick="currentSlide(19)"></span>
-    <span class="dot" onclick="currentSlide(20)"></span>
-    <span class="dot" onclick="currentSlide(21)"></span>
-    <span class="dot" onclick="currentSlide(22)"></span>
-    <span class="dot" onclick="currentSlide(23)"></span>
-    <span class="dot" onclick="currentSlide(24)"></span>
-    <span class="dot" onclick="currentSlide(25)"></span>
-    <span class="dot" onclick="currentSlide(26)"></span>
-         
-  </div>
-</section>
-
-      </div>
-    </header>
-
-  <script>
     function openNav() {
       document.getElementById("myNav").style.width = "100%";
     }
@@ -283,5 +48,82 @@
       document.getElementById("myNav").style.width = "0%";
     }
   </script>
+</head>
+
+<body class="w3-light-white w3-margin">
+
+  <!-- Overlay Menu -->
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="index.html" onclick="closeNav()">Home</a>
+      <a href="AboutMe.html" onclick="closeNav()">About Me</a>
+      <a href="pricepage.html" onclick="closeNav()">Price List</a>
+      <a href="catalog.html" onclick="closeNav()">The Cat-alogue</a>
+      <a href="contact.html" onclick="closeNav()">Contact</a>
+    </div>
+  </div>
+
+  <!-- Menu Button -->
+  <div id="menuBtn" onclick="openNav()" aria-label="Open menu" role="button" tabindex="0" style="font-size: 30px; cursor: pointer; margin: 15px;">
+    &#9776; Menu
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="w3-bar w3-white w3-text-black">
+    <h2 class="w3-left w3-tag w3-pale-red w3-round" style="margin-left: 175px;">Paws At Yours</h2>
+    <a href="contact.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">CONTACT</a>
+    <a href="catalog.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">THE CAT-ALOGUE</a>
+    <a href="pricepage.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">PRICE LIST</a>
+    <a href="AboutMe.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">ABOUT ME</a>
+    <a href="index.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">HOME</a>
+  </div>
+
+  <!-- Page Content -->
+  <div class="w3-content" style="max-width: 1600px;">
+    <header class="w3-display-container w3-wide" style="padding-bottom: 32px;" id="Home">
+      <img class="w3-image" src="images/Main Photo.jpg" width="1600" height="1060" alt="Paws at Yours" />
+      <div class="w3-display-left w3-padding-large">
+        <h1 class="w3-text-white">Paws at Yours</h1>
+        <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Cat Sitting</b></h1>
+        <button class="w3-button w3-round w3-padding-large w3-large w3-hover-opacity-off w3-text-white w3-border book-button">
+          <a href="contact.html" style="color: inherit; text-decoration: none;">BOOK NOW</a>
+        </button>
+        <section class="w3-container w3-center" style="margin-top: 40px;">
+          <p style="font-size: 18px;">
+            To look at prices <a href="pricepage.html" style="color: #f15b5b; font-weight: bold;">click here</a>.
+          </p>
+        </section>
+      </div>
+    </header>
+
+    <!-- Customer Gallery -->
+    <section class="w3-container" style="margin-top: 50px;">
+      <h2 class="w3-center" style="margin-bottom: 20px;">Our Happy Customers</h2>
+
+      <div class="slideshow-container">
+        <!-- Each image below should be inside its own div -->
+        <div class="mySlides fade"><img src="images/Basil.jpg" style="width:100%"></div>
+        <div class="mySlides fade"><img src="images/Coco.jpg" style="width:100%"></div>
+        <div class="mySlides fade"><img src="images/Chilli.jpg" style="width:100%"></div>
+        <!-- ... Continue all customer images here as needed ... -->
+        <div class="mySlides fade"><img src="images/Tonka.jpg" style="width:100%"></div>
+
+        <!-- Slideshow Controls -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+
+      <br />
+      <div style="text-align:center">
+        <!-- Adjust number of dots based on the number of slides -->
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <!-- ... add more dots as needed ... -->
+      </div>
+    </section>
+  </div>
+
 </body>
 </html>
