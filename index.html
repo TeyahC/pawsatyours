@@ -14,57 +14,69 @@
 
   <!-- Slideshow Script -->
   <script>
+  function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+  }
 
-    function openNav() {
-      document.getElementById("myNav").style.width = "100%";
-    }
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
 
-    function closeNav() {
-      document.getElementById("myNav").style.width = "0%";
-    }
-
-   let slideIndex = 0;
+  let slideIndex = 0;
+  let slideTimer; // Timer variable to control slideshow interval
 
   function showSlides() {
     let i;
     let slides = document.getElementsByClassName("mySlides");
     let dots = document.getElementsByClassName("dot");
+
+    // Hide all slides
     for (i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
+
     slideIndex++;
     if (slideIndex > slides.length) {
       slideIndex = 1;
     }
+
+    // Remove "active" class from all dots
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
+
+    // Show current slide and mark corresponding dot active
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
+
+    // Set timer to show next slide automatically after 5.5 seconds
+    slideTimer = setTimeout(showSlides, 5500);
   }
 
+  // Function to manually change slides
   function plusSlides(n) {
-    slideIndex += n - 1; // subtract 1 to counter auto increment in showSlides
+    clearTimeout(slideTimer); // Reset timer on manual change
+    slideIndex += n - 1; // subtract 1 because showSlides auto increments slideIndex
+    let slides = document.getElementsByClassName("mySlides");
     if (slideIndex < 0) {
-      slideIndex = document.getElementsByClassName("mySlides").length - 1;
+      slideIndex = slides.length - 1;
     }
     showSlides();
   }
 
+  // Function to jump to a specific slide manually
   function currentSlide(n) {
+    clearTimeout(slideTimer); // Reset timer on manual change
     slideIndex = n - 1;
     showSlides();
   }
 
-  function startSlideshow() {
-    showSlides();
-    setTimeout(startSlideshow, 5500);
-  }
-
+  // Start slideshow on DOM load
   document.addEventListener("DOMContentLoaded", () => {
-    startSlideshow();
+    showSlides();
   });
-  </script>
+</script>
+
 </head>
 
 <body class="w3-light-white w3-margin">
