@@ -215,30 +215,6 @@ h2, h3, h4 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 12px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 24px;
-  border-radius: 0 3px 3px 0;
-  background-color: rgba(0,0,0,0.3);
-  user-select: none;
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.6);
-}
-
 .dot {
   height: 12px;
   width: 12px;
@@ -282,7 +258,7 @@ h2, h3, h4 {
 
 .slideshow-arrows {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .slideshow-arrows .prev,
@@ -290,13 +266,18 @@ h2, h3, h4 {
   cursor: pointer;
   color: #b22222;
   font-size: 2.5rem;
-  padding: 0 20px;
+  padding: 0 30px;
   user-select: none;
   transition: color 0.3s ease;
+  position: static; /* Remove absolute positioning */
+  display: inline-block; /* Show inline side by side */
+  border-radius: 0; /* Remove rounded corners from absolute */
+  background-color: transparent; /* Remove background */
 }
 
 .slideshow-arrows .prev:hover,
 .slideshow-arrows .next:hover {
   color: #7a0d0d;
+  background-color: transparent;
 }
 
