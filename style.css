@@ -102,6 +102,7 @@ button a {
 #Price\ List img {
   max-width: 100%;
   height: auto;
+  align-items: center;
 }
 
 nav ul {
