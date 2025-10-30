@@ -4,6 +4,7 @@ html {
 
 body {
   font-family: "Source Sans Pro", sans-serif;
+  color: #729ea1;
 }
 
 h1,
@@ -26,7 +27,7 @@ h6 {
   padding: 6px 12px;
   border-radius: 4px;
   z-index: 1001;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   user-select: none;
   transition: background-color 0.3s ease;
 }
@@ -128,7 +129,9 @@ main {
   margin: auto;
 }
 
-h2, h3, h4 {
+h2,
+h3,
+h4 {
   color: #333;
   margin-top: 2rem;
 }
@@ -146,7 +149,7 @@ h2, h3, h4 {
   max-width: 250px;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive stacking on small screens */
@@ -213,7 +216,7 @@ h2, h3, h4 {
 
 .mySlides img {
   border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .dot {
@@ -226,12 +229,10 @@ h2, h3, h4 {
   transition: background-color 0.3s;
 }
 
-
-
 .slideshow-container {
-  max-width: 90vw;      /* responsive width */
+  max-width: 90vw; /* responsive width */
   width: 100%;
-  max-height: 500px;    /* limit height */
+  max-height: 500px; /* limit height */
   margin: auto;
   position: relative;
   overflow: hidden;
@@ -246,8 +247,8 @@ h2, h3, h4 {
   border-radius: 10px;
 }
 
-
-.active, .dot:hover {
+.active,
+.dot:hover {
   background-color: #717171;
 }
 
@@ -281,4 +282,3 @@ h2, h3, h4 {
   color: #7a0d0d;
   background-color: transparent;
 }
-
