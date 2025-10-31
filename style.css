@@ -713,6 +713,7 @@ header.navbar {
   .site-title {
     margin-right: 10px;
     font-size: 1.5rem;
+    text-align: right;
   }
 
   /* Hero Section */
@@ -726,9 +727,11 @@ header.navbar {
   }
   .hero-title {
     font-size: 2.5rem;
+    margin-bottom: 10px;
   }
   .hero-subtitle {
     font-size: 2rem;
+    margin-bottom: 10px;
   }
 
   /* Slideshow */
@@ -755,7 +758,7 @@ header.navbar {
   .customer-entry {
     flex-direction: column;
     text-align: center;
-    width: 95%;
+    width: 90%;
   }
   .cat-image,
   .cat-info,
@@ -790,7 +793,7 @@ header.navbar {
     overflow-x: auto; /* allow horizontal scroll if table is wide */
   }
   .price-table {
-    width: 30%;
+    width: 20%;
     display: block; /* makes table shrink-to-fit container */
     min-width: 300px; /* prevents it from squishing too much */
   }
