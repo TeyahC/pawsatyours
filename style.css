@@ -667,6 +667,10 @@ header.navbar {
   font-size: 2rem;
   margin-bottom: 20px;
 }
+.date-input {
+  width: 100%;
+  margin-bottom: 10px;
+}
 
 .quote-form input {
   width: 100%;
@@ -676,8 +680,26 @@ header.navbar {
   border-radius: 8px;
   font-size: 1rem;
   box-sizing: border-box;
+  resize: vertical;
 }
 
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical; /* allow user to expand up/down if they want */
+  box-sizing: border-box;
+}
+
+textarea.form-input {
+  height: auto;
+  min-height: 100px;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  white-space: pre-wrap; /* ensures text wraps properly */
+}
 .quote-form label {
   display: block;
   text-align: left;
@@ -828,8 +850,12 @@ header.navbar {
   }
 
   .price-note {
-    width: 95%;
-    margin: 15px auto;
+    border: 2px dashed #ff4782;
+    padding: 15px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 700px;
   }
 
   /* Contact Section */
