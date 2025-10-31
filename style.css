@@ -724,8 +724,7 @@ textarea.form-input {
   background-color: #120d31;
 }
 
-
-} /* ===== MOBILE FIXES ===== */
+/* ===== MOBILE FIXES ===== */
 @media (max-width: 768px) {
   /* Navbar */
   .nav-links {
@@ -786,6 +785,8 @@ textarea.form-input {
     flex-direction: column;
     text-align: center;
     width: 95%;
+    margin-left: auto;
+    margin-right: auto;
   }
   .cat-image,
   .cat-info,
@@ -822,11 +823,11 @@ textarea.form-input {
     padding: 15px;
     background-color: #efe9f4;
     border-radius: 10px;
-    overflow-x: scroll; /* horizontal scroll works now */
+    overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
   .price-table {
-    min-width: 700px; /* table wider than container */
+    min-width: 700px;
     width: auto;
   }
   .price-table th,
@@ -843,6 +844,7 @@ textarea.form-input {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
   }
   .quote-form-container input,
   .quote-form-container textarea {
@@ -854,8 +856,26 @@ textarea.form-input {
     border-radius: 6px;
   }
 
+  /* Date inputs stacked vertically */
+  .date-group {
+    display: flex;
+    flex-direction: column; /* stack items */
+    gap: 10px;
+  }
+  .date-group label,
+  .date-group input[type="date"] {
+    width: 100%;
+  }
 
-  /* Center main containers again */
+  /* Message box multi-line */
+  textarea.form-input {
+    min-height: 100px;
+    resize: vertical;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  /* Make main containers centered */
   .cat-profile,
   .customer-entry,
   .photo-pair,
@@ -867,41 +887,9 @@ textarea.form-input {
     width: 95%;
   }
 
-  /* Quote form */
-  .quote-form-container {
-    text-align: left; /* keep labels left-aligned */
-  }
-
-  /* Date inputs stacked vertically */
-  .date-group {
-    display: flex;
-    flex-direction: column; /* stack items */
-    gap: 10px;
-  }
-  .date-group label,
-  .date-group input[type="date"] {
-    width: 100%; /* take full width */
-  }
-
-  /* Message box multi-line */
-  textarea.form-input {
-    min-height: 100px;
-    resize: vertical;
-    overflow-wrap: break-word;
-    white-space: pre-wrap;
-  }
-
-  /* Price table scrolling stays */
-  .price-table-wrapper {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-}
-
-
-  /* Make background fixed using pseudo-element for mobile */
+  /* Background fix for mobile */
   body {
-    background: none; /* remove buggy fixed */
+    background: none;
     padding-top: 90px;
   }
   html::before {
@@ -915,11 +903,10 @@ textarea.form-input {
     background-size: cover;
     background-repeat: no-repeat;
   }
-}
 
-@media (max-width: 768px) {
+  /* Ensure date inputs stretch fully on tiny screens */
   .date-group input[type="date"] {
-    max-width: 100%; /* take full width on very small screens */
+    max-width: 100%;
   }
 }
 
