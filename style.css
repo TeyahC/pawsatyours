@@ -711,7 +711,7 @@ header.navbar {
     display: block;
   }
   .site-title {
-    margin-left: auto;
+    margin-left: auto; /* pushes title to the right */
     font-size: 1.5rem;
   }
 
@@ -758,6 +758,7 @@ header.navbar {
     flex-direction: column;
     text-align: center;
     width: 90%;
+    margin: 0 auto;
   }
   .cat-image,
   .cat-info,
@@ -787,23 +788,23 @@ header.navbar {
 
   /* Price Table */
   .price-table-wrapper {
-    width: 100%; /* take full width */
+    width: 100%;
     padding: 20px 10px;
-    overflow-x: auto; /* allow horizontal scroll if table is wide */
+    overflow-x: auto; /* horizontal scroll if table is wide */
   }
   .price-table {
-    width: 20%;
-    display: block; /* makes table shrink-to-fit container */
-    min-width: 300px; /* prevents it from squishing too much */
+    width: 100%; /* table takes full width of wrapper */
+    display: table; /* keep table behavior */
+    min-width: 300px; /* prevents table from squishing too much */
   }
   .price-table th,
   .price-table td {
     padding: 10px 8px;
-    font-size: 0.9rem; /* slightly smaller font for mobile */
+    font-size: 0.9rem;
   }
   .price-note {
     width: 95%;
-    margin: 15px auto; /* center price note */
+    margin: 15px auto;
   }
 
   /* Contact Section */
