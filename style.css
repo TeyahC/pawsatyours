@@ -711,9 +711,8 @@ header.navbar {
     display: block;
   }
   .site-title {
-    margin-right: 10px;
+    margin-left: auto;
     font-size: 1.5rem;
-    text-align: right;
   }
 
   /* Hero Section */
@@ -764,7 +763,7 @@ header.navbar {
   .cat-info,
   .customer-image-group,
   .customer-info {
-    width: 100%;
+    width: 90%;
     margin-left: 0;
     margin-top: 15px;
     justify-content: center;
