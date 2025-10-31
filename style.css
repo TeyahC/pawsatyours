@@ -698,6 +698,7 @@ header.navbar {
 }
 
 /* ===== MOBILE FIXES ===== */
+/* ===== MOBILE FIXES ===== */
 @media (max-width: 768px) {
   /* Navbar */
   .nav-links {
@@ -713,7 +714,7 @@ header.navbar {
 
   /* Hero Section */
   .hero-text {
-    position: relative; /* stack normally */
+    position: relative;
     top: auto;
     left: auto;
     margin: 20px auto;
@@ -730,7 +731,7 @@ header.navbar {
   /* Slideshow */
   .slideshow {
     width: 95%;
-    height: 250px; /* adjust for mobile */
+    height: 250px;
   }
   .mySlides img {
     width: 100%;
@@ -769,20 +770,35 @@ header.navbar {
   .photo-trio {
     flex-direction: column;
     align-items: center;
+    margin: 0 auto;
   }
   .photo-trio img,
   .catalog-image {
     width: 100%;
     max-width: 90%;
+    display: block;
+    margin: 0 auto; /* center catalog images */
   }
 
   /* Price Table */
   .price-table-wrapper {
-    width: 95%;
+    width: 100%; /* take full width */
     padding: 20px 10px;
+    overflow-x: auto; /* allow horizontal scroll if table is wide */
+  }
+  .price-table {
+    width: 100%;
+    display: block; /* makes table shrink-to-fit container */
+    min-width: 300px; /* prevents it from squishing too much */
+  }
+  .price-table th,
+  .price-table td {
+    padding: 10px 8px;
+    font-size: 0.9rem; /* slightly smaller font for mobile */
   }
   .price-note {
     width: 95%;
+    margin: 15px auto; /* center price note */
   }
 
   /* Contact Section */
@@ -796,7 +812,7 @@ header.navbar {
 
   /* Additional small fixes */
   .hero-text {
-    top: 25%; /* optional tweak if needed */
+    top: 25%;
   }
   .customer-image-group {
     max-width: 100%;
