@@ -912,7 +912,7 @@ textarea.form-input {
 /* Make inputs smaller on mobile */
 .date-group input[type="date"] {
   flex: 1 1 120px; /* grow/shrink, min-width 120px */
-  max-width: 45%; /* stay within 45% of container on small screens */
+  max-width: 50%; /* stay within 45% of container on small screens */
   box-sizing: border-box;
   padding: 8px;
   border-radius: 6px;
