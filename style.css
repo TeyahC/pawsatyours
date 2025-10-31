@@ -202,6 +202,34 @@ header.navbar {
   font-size: 5rem;
 }
 
+@media (max-width: 768px) {
+  .hero-text {
+    position: relative;
+    top: auto;
+    margin: 20px auto;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .slideshow {
+    width: 95%;
+    height: 250px; /* shrink for mobile */
+  }
+
+  .mySlides img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 /* ===== CUSTOMER GALLERY ===== */
 .customer-gallery {
   float: right;

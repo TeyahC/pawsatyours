@@ -20,6 +20,14 @@
           document.getElementById("header").innerHTML = data;
         })
         .catch((error) => console.error("Error loading header:", error));
+
+      function openNav() {
+        document.getElementById("mobileMenu").style.width = "100%";
+      }
+
+      function closeNav() {
+        document.getElementById("mobileMenu").style.width = "0%";
+      }
     </script>
 
     <!-- PRICE LIST SECTION -->
