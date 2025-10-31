@@ -86,22 +86,13 @@
                 required
                 name="Service"
               />
-              <label for="start-date">From:</label>
-              <input
-                class="form-input"
-                type="date"
-                id="start-date"
-                name="Start Date"
-                required
-              />
-              <label for="end-date">To:</label>
-              <input
-                class="form-input"
-                type="date"
-                id="end-date"
-                name="End Date"
-                required
-              />
+              <div class="date-group">
+                <label for="start-date">From:</label>
+                <input type="date" id="start-date" name="Start Date" required />
+
+                <label for="end-date">To:</label>
+                <input type="date" id="end-date" name="End Date" required />
+              </div>
               <textarea
                 class="form-input"
                 placeholder="Message"
