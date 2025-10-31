@@ -202,34 +202,6 @@ header.navbar {
   font-size: 5rem;
 }
 
-@media (max-width: 768px) {
-  .hero-text {
-    position: relative;
-    top: auto;
-    margin: 20px auto;
-    text-align: center;
-    padding: 0 10px;
-  }
-
-  .hero-title {
-    font-size: 2.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 2rem;
-  }
-
-  .slideshow {
-    width: 95%;
-    height: 250px; /* shrink for mobile */
-  }
-
-  .mySlides img {
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
 /* ===== CUSTOMER GALLERY ===== */
 .customer-gallery {
   float: right;
@@ -349,61 +321,6 @@ header.navbar {
   height: auto;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
-  #menuButton {
-    display: block;
-  }
-  .site-title {
-    margin-left: 50px;
-  }
-  .hero-title {
-    font-size: 2rem;
-  }
-  .hero-subtitle {
-    font-size: 2.2rem;
-  }
-  .hero-text {
-    top: 25%;
-  }
-}
-
-@media (max-width: 600px) {
-  .photo-pair,
-  .photo-trio {
-    flex-direction: column;
-    align-items: center;
-  }
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  .photo-trio img {
-    max-width: 90%;
-  }
-  .catalog-image {
-    width: 100%;
-  }
-}
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  .photo-trio img {
-    max-width: 45%;
-  }
-  .catalog-image {
-    max-width: 400px;
-  }
-}
-
-@media (min-width: 1025px) {
-  .photo-trio img {
-    max-width: 30%;
-  }
-}
-
 /*about me page*/
 
 .about-section {
@@ -492,20 +409,6 @@ header.navbar {
   font-size: 1rem;
   line-height: 1.6;
   color: #204b57;
-}
-
-/* Responsive layout for mobile */
-@media (max-width: 768px) {
-  .cat-profile {
-    flex-direction: column;
-    text-align: center;
-    width: 95%;
-  }
-
-  .cat-image,
-  .cat-info {
-    width: 100%;
-  }
 }
 
 .price-section {
@@ -680,24 +583,6 @@ header.navbar {
   color: #204b57;
 }
 
-@media (max-width: 768px) {
-  .customer-entry {
-    flex-direction: column;
-    text-align: center;
-    width: 95%;
-  }
-
-  .customer-image-group {
-    max-width: 100%;
-    justify-content: center;
-  }
-
-  .customer-info {
-    margin-left: 0;
-    margin-top: 15px;
-  }
-}
-
 /* ===== Contact Section ===== */
 .contact-section {
   padding: 50px 20px;
@@ -812,14 +697,113 @@ header.navbar {
   background-color: #120d31;
 }
 
-/* ===== Responsive ===== */
+/* ===== MOBILE FIXES ===== */
 @media (max-width: 768px) {
+  /* Navbar */
+  .nav-links {
+    display: none;
+  }
+  #menuButton {
+    display: block;
+  }
+  .site-title {
+    margin-left: 50px;
+    font-size: 1.5rem;
+  }
+
+  /* Hero Section */
+  .hero-text {
+    position: relative; /* stack normally */
+    top: auto;
+    left: auto;
+    margin: 20px auto;
+    padding: 0 10px;
+    text-align: center;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  /* Slideshow */
+  .slideshow {
+    width: 95%;
+    height: 250px; /* adjust for mobile */
+  }
+  .mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .slideshow-arrows .arrow {
+    font-size: 2rem;
+    padding: 0 10px;
+  }
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
+
+  /* Customer & Cat Profiles */
+  .cat-profile,
+  .customer-entry {
+    flex-direction: column;
+    text-align: center;
+    width: 95%;
+  }
+  .cat-image,
+  .cat-info,
+  .customer-image-group,
+  .customer-info {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 15px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Photo layouts */
+  .photo-pair,
+  .photo-trio {
+    flex-direction: column;
+    align-items: center;
+  }
+  .photo-trio img,
+  .catalog-image {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  /* Price Table */
+  .price-table-wrapper {
+    width: 95%;
+    padding: 20px 10px;
+  }
+  .price-note {
+    width: 95%;
+  }
+
+  /* Contact Section */
   .contact-buttons {
     flex-direction: column;
     gap: 15px;
   }
-
   .quote-form-container {
     width: 95%;
+  }
+
+  /* Additional small fixes */
+  .hero-text {
+    top: 25%; /* optional tweak if needed */
+  }
+  .customer-image-group {
+    max-width: 100%;
+    justify-content: center;
+  }
+  .customer-info {
+    margin-left: 0;
+    margin-top: 15px;
   }
 }
