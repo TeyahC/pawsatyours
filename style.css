@@ -768,7 +768,7 @@ header.navbar {
   .cat-info,
   .customer-image-group,
   .customer-info {
-    width: 90%;
+    width: 100%;
     margin-left: 0;
     margin-top: 15px;
     justify-content: center;
