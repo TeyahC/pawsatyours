@@ -24,6 +24,8 @@ body {
   background-image: url("images/paws.png");
   background-position: center top;
   background-size: 500px auto;
+  padding-top: 100px;
+  background-attachment: fixed;
 }
 
 h1,
@@ -44,7 +46,8 @@ header.navbar {
   background-color: #204b57; /* header background color */
   color: #efe9f4; /* text color */
   padding: 15px 40px;
-  position: sticky;
+
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
