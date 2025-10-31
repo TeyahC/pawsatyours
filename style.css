@@ -715,6 +715,10 @@ header.navbar {
     font-size: 1.5rem;
   }
 
+  .body {
+    background-attachment: fixed;
+  }
+
   /* Hero Section */
   .hero-text {
     position: relative;
