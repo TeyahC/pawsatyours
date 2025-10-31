@@ -657,6 +657,8 @@ header.navbar {
   max-width: 700px;
   margin: 0 auto;
   text-align: left;
+  min-height: 120px; /* or 150px if you want it taller */
+  resize: vertical;
 }
 
 .form-title {
@@ -801,14 +803,17 @@ header.navbar {
     margin: 10px auto;
     padding: 15px;
     overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
     background-color: #efe9f4;
     border-radius: 8px;
   }
+
   .price-table {
-    width: 100%;
-    min-width: 400px;
+    min-width: 600px; /* force overflow on smaller screens */
+    width: max-content; /* prevents shrinking */
     border-collapse: collapse;
   }
+
   .price-table th,
   .price-table td {
     padding: 10px 8px;
@@ -838,7 +843,12 @@ header.navbar {
   .quote-form-container textarea,
   .quote-form-container select {
     width: 100%;
+    box-sizing: border-box;
     max-width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
   }
 
   /* General Fixes */
