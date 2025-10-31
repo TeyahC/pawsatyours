@@ -726,7 +726,7 @@ textarea.form-input {
 
 /* ===== MOBILE FIXES ===== */
 @media (max-width: 768px) {
-  /* Navbar */
+  /* ===== NAVBAR ===== */
   .nav-links {
     display: none;
   }
@@ -742,7 +742,7 @@ textarea.form-input {
     font-size: 1.5rem;
   }
 
-  /* Hero Section */
+  /* ===== HERO SECTION ===== */
   .hero-text {
     position: relative;
     top: auto;
@@ -760,10 +760,11 @@ textarea.form-input {
     margin-bottom: 10px;
   }
 
-  /* Slideshow */
+  /* ===== SLIDESHOW ===== */
   .slideshow {
     width: 95%;
     height: 250px;
+    margin: 20px auto;
   }
   .mySlides img {
     width: 100%;
@@ -779,32 +780,31 @@ textarea.form-input {
     width: 10px;
   }
 
-  /* Customer & Cat Profiles */
+  /* ===== CUSTOMER & CAT PROFILES ===== */
   .cat-profile,
   .customer-entry {
     flex-direction: column;
     text-align: center;
     width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 20px auto; /* centers with top/bottom margin */
   }
   .cat-image,
   .cat-info,
   .customer-image-group,
   .customer-info {
     width: 100%;
-    margin-left: 0;
-    margin-top: 15px;
+    margin: 10px 0;
     justify-content: center;
     align-items: center;
   }
 
-  /* Photo layouts */
+  /* ===== PHOTO LAYOUTS / CATALOG ===== */
   .photo-pair,
   .photo-trio {
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    margin: 20px auto;
+    width: 95%;
   }
   .photo-pair img,
   .photo-trio img,
@@ -812,19 +812,27 @@ textarea.form-input {
     width: 100%;
     max-width: 90%;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     object-fit: cover;
   }
 
-  /* Price Table */
+  /* ===== ABOUT ME SECTION ===== */
+  .about-section {
+    width: 95%;
+    max-width: 600px;
+    margin: 20px auto; /* equal top/bottom & left/right margins */
+    padding: 25px 15px;
+  }
+
+  /* ===== PRICE TABLE ===== */
   .price-table-wrapper {
     width: 95%;
-    margin: 15px auto;
+    margin: 20px auto;
     padding: 15px;
-    background-color: #efe9f4;
-    border-radius: 10px;
-    overflow-x: auto;
+    overflow-x: auto; /* horizontal scroll works */
     -webkit-overflow-scrolling: touch;
+    border-radius: 10px;
+    white-space: nowrap; /* ensures horizontal scroll */
   }
   .price-table {
     min-width: 700px;
@@ -837,10 +845,11 @@ textarea.form-input {
     white-space: nowrap;
   }
 
-  /* Quote Form */
+  /* ===== QUOTE FORM ===== */
   .quote-form-container {
     width: 95%;
-    margin: 20px auto;
+    max-width: 700px;
+    margin: 20px auto; /* centers container */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -849,17 +858,16 @@ textarea.form-input {
   .quote-form-container input,
   .quote-form-container textarea {
     width: 100%;
-    max-width: 100%;
     box-sizing: border-box;
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 6px;
   }
 
-  /* Date inputs stacked vertically */
+  /* Stack From / To date fields */
   .date-group {
     display: flex;
-    flex-direction: column; /* stack items */
+    flex-direction: column;
     gap: 10px;
   }
   .date-group label,
@@ -867,7 +875,6 @@ textarea.form-input {
     width: 100%;
   }
 
-  /* Message box multi-line */
   textarea.form-input {
     min-height: 100px;
     resize: vertical;
@@ -875,19 +882,13 @@ textarea.form-input {
     white-space: pre-wrap;
   }
 
-  /* Make main containers centered */
-  .cat-profile,
-  .customer-entry,
-  .photo-pair,
-  .photo-trio,
-  .price-table-wrapper,
-  .quote-form-container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 95%;
+  /* ===== FORCE VERTICAL SCROLL ONLY ===== */
+  body,
+  html {
+    overflow-x: hidden; /* no horizontal scroll except tables */
   }
 
-  /* Background fix for mobile */
+  /* ===== MOBILE BACKGROUND FIX ===== */
   body {
     background: none;
     padding-top: 90px;
@@ -902,11 +903,6 @@ textarea.form-input {
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
-  }
-
-  /* Ensure date inputs stretch fully on tiny screens */
-  .date-group input[type="date"] {
-    max-width: 100%;
   }
 }
 
