@@ -787,7 +787,7 @@ header.navbar {
     overflow-x: auto; /* allow horizontal scroll if table is wide */
   }
   .price-table {
-    width: 100%;
+    width: 30%;
     display: block; /* makes table shrink-to-fit container */
     min-width: 300px; /* prevents it from squishing too much */
   }
