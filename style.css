@@ -771,6 +771,12 @@ header.navbar {
   }
 
   /* Photo layouts */
+  .price-section {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
   .photo-pair,
   .photo-trio {
     flex-direction: column;
