@@ -1,145 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Paws at Yours</title>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <title>Paws at Yours</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Internal CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-  <!-- Internal CSS -->
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <body class="page-body">
+    <div id="header"></div>
 
-<body class="w3-light-white w3-margin">
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading header:", error));
+    </script>
 
-  <!-- Overlay Menu -->
-  <div id="myNav" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="overlay-content">
-      <a href="index.html" onclick="closeNav()">Home</a>
-      <a href="AboutMe.html" onclick="closeNav()">About Me</a>
-      <a href="catalog.html" onclick="closeNav()">The Cat-alogue</a>
-      <a href="pricepage.html" onclick="closeNav()">Price List</a>
-      <a href="" onclick="closeNav()">Contact</a>
-    </div>
-  </div>
+    <!-- Page Content Container -->
+    <div class="page-content">
+      <!-- Contact Section -->
+      <section class="contact-section" id="Contact">
+        <div class="contact-container">
+          <div class="contact-header">
+            <h2 class="contact-title"><u>CONTACT</u></h2>
+            <p class="contact-subtitle">
+              <i>Send us a message to get a quote and book</i>
+            </p>
+            <p class="contact-info">
+              We have a price list on our page; however if there are any
+              services you need that aren't mentioned please feel free to drop
+              us a message via Facebook, WhatsApp, or on this website below to
+              get a quote.
+            </p>
+          </div>
 
-  <!-- Menu Button -->
-  <div id="menuBtn" onclick="openNav()" aria-label="Open menu" role="button" tabindex="0">
-    &#9776; Menu
-  </div>
+          <!-- Contact Buttons -->
+          <div class="contact-buttons">
+            <a
+              href="https://www.facebook.com/profile.php?id=100092206148303"
+              target="_blank"
+              class="contact-button facebook-button"
+              >Facebook</a
+            >
+            <a
+              href="https://wa.me/447392833665"
+              target="_blank"
+              class="contact-button whatsapp-button"
+              >WhatsApp</a
+            >
+          </div>
 
-  <!-- Navigation Bar -->
-  <div class="w3-bar w3-white w3-text-black">
-    <h2 class="w3-left w3-tag w3-pale-red w3-round" style="margin-left: 175px;">Paws At Yours</h2>
-    <a
-      href=""
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >CONTACT</a
-    >
-      <a
-      href="catalog.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >THE CAT-ALOGUE</a
-    >
-    <a
-      href="pricepage.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >PRICE LIST</a
-    >
-    <a
-      href="AboutMe.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >ABOUT ME</a
-    >
-    
-    <a
-      href="index.html"
-      class="w3-hide-small w3-bar-item w3-button w3-mobile w3-medium w3-right"
-      style="margin-top: 10px;"
-      >HOME</a
-    >
-  </div>
-
-  <!-- Page Content Container -->
-  <div class="w3-content" style="max-width: 1600px">
-
-
-    <!-- Contact Section -->
-    <div class="w3-white" id="Contact">
-      <div class="w3-container w3-padding-32">
-        <div class="w3-center w3-padding-32">
-          <h2 class="w3-wide"><u>CONTACT</u></h2>
-          <p class="w3-opacity"><i>Send us a message to get a quote and book</i></p><br />
-          <p class="w3-white w3-text-black w3-center">
-            We have a price list on our page; however if there are any services you need that
-            aren't mentioned please feel free to drop us a message via Facebook, WhatsApp or on
-            this website below to get a quote.
-          </p>
+          <!-- Quote Form -->
+          <div class="quote-form-container">
+            <h2 class="form-title">Get a Quote</h2>
+            <form
+              action="mailto:teyahc@hotmail.com"
+              method="post"
+              enctype="text/plain"
+              class="quote-form"
+            >
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Name"
+                required
+                name="Name"
+              />
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Service"
+                required
+                name="Service"
+              />
+              <label for="start-date">From:</label>
+              <input
+                class="form-input"
+                type="date"
+                id="start-date"
+                name="Start Date"
+                required
+                value="2020-11-16"
+              />
+              <label for="end-date">To:</label>
+              <input
+                class="form-input"
+                type="date"
+                id="end-date"
+                name="End Date"
+                required
+                value="2020-11-16"
+              />
+              <input
+                class="form-input"
+                type="text"
+                placeholder="Message"
+                required
+                name="Message"
+              />
+              <button class="form-button" type="submit">Submit</button>
+            </form>
+          </div>
         </div>
-
-        <!-- Contact Buttons -->
-        <p>
-          <h6>
-            <button class="w3-button w3-round w3-blue w3-padding-large w3-large w3-hover-opacity-off">
-              <a href="https://www.facebook.com/profile.php?id=100092206148303" target="_blank">Facebook</a>
-            </button>
-            <button class="w3-button w3-round w3-green w3-padding-large w3-large w3-hover-opacity-off">
-              <a href="https://wa.me/447392833665" target="_blank">WhatsApp</a>
-            </button>
-          </h6>
-        </p>
-        <br />
-
-        <!-- Quote Form -->
-        <h2>Get a Quote</h2>
-        <form action="mailto:teyahc@hotmail.com" method="post" enctype="text/plain">
-          <p>
-            <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name" />
-          </p>
-          <p>
-            <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Service" required name="Service" />
-          </p>
-          From:
-          <p>
-            <input class="w3-input w3-padding-16 w3-border" type="date" placeholder="Start Date" required name="Start Date" value="2020-11-16" />
-          </p>
-          To:
-          <p>
-            <input class="w3-input w3-padding-16 w3-border" type="date" placeholder="End Date" required name="End Date" value="2020-11-16" />
-          </p>
-          <p>
-            <input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message" required name="Message" />
-          </p>
-          <p>
-            <button class="w3-button w3-round w3-pale-red w3-padding-medium w3-medium w3-hover-opacity-on" type="submit">
-              Submit
-            </button>
-          </p>
-        </form>
-      </div>
+      </section>
     </div>
-  </div>
-
-  <!-- JavaScript -->
-  <script>
-    function openNav() {
-      document.getElementById("myNav").style.width = "100%";
-    }
-
-    function closeNav() {
-      document.getElementById("myNav").style.width = "0%";
-    }
-  </script>
-
-</body>
+  </body>
 </html>

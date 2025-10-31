@@ -1,242 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Paws at Yours</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paws at Yours</title>
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet" href="style.css" />
+    <!-- External CSS -->
 
-  <!-- Slideshow Script -->
-  <script>
-  function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-  }
+    <link rel="stylesheet" href="style.css" />
 
-  function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-  }
+    <!-- Slideshow Script -->
+    <script>
+      function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+      }
 
-  let slideIndex = 0;
-  let slideTimer; // Timer variable to control slideshow interval
+      function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+      }
 
-  function showSlides() {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
+      let slideIndex = 0;
+      let slideTimer; // Timer variable to control slideshow interval
 
-    // Hide all slides
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
+      function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
 
-    slideIndex++;
-    if (slideIndex > slides.length) {
-      slideIndex = 1;
-    }
+        // Hide all slides
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
 
-    // Remove "active" class from all dots
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-    }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
 
-    // Show current slide and mark corresponding dot active
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
+        // Remove "active" class from all dots
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
 
-    // Set timer to show next slide automatically after 5.5 seconds
-    slideTimer = setTimeout(showSlides, 3500);
-  }
+        // Show current slide and mark corresponding dot active
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
 
-  // Function to manually change slides
-  function plusSlides(n) {
-    clearTimeout(slideTimer); // Reset timer on manual change
-    slideIndex += n - 1; // subtract 1 because showSlides auto increments slideIndex
-    let slides = document.getElementsByClassName("mySlides");
-    if (slideIndex < 0) {
-      slideIndex = slides.length - 1;
-    }
-    showSlides();
-  }
+        // Set timer to show next slide automatically after 5.5 seconds
+        slideTimer = setTimeout(showSlides, 3500);
+      }
 
-  // Function to jump to a specific slide manually
-  function currentSlide(n) {
-    clearTimeout(slideTimer); // Reset timer on manual change
-    slideIndex = n - 1;
-    showSlides();
-  }
+      // Function to manually change slides
+      function plusSlides(n) {
+        clearTimeout(slideTimer); // Reset timer on manual change
+        slideIndex += n - 1; // subtract 1 because showSlides auto increments slideIndex
+        let slides = document.getElementsByClassName("mySlides");
+        if (slideIndex < 0) {
+          slideIndex = slides.length - 1;
+        }
+        showSlides();
+      }
 
-  // Start slideshow on DOM load
-  document.addEventListener("DOMContentLoaded", () => {
-    showSlides();
-  });
-</script>
+      // Function to jump to a specific slide manually
+      function currentSlide(n) {
+        clearTimeout(slideTimer); // Reset timer on manual change
+        slideIndex = n - 1;
+        showSlides();
+      }
 
-</head>
+      // Start slideshow on DOM load
+      document.addEventListener("DOMContentLoaded", () => {
+        showSlides();
+      });
+    </script>
+  </head>
 
-<body class="w3-light-white w3-margin">
+  <body class="w3-light-white w3-margin">
+    <div id="header"></div>
 
-  <!-- Overlay Menu -->
-  <div id="myNav" class="overlay">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <div class="overlay-content">
-      <a href="index.html" onclick="closeNav()">Home</a>
-      <a href="AboutMe.html" onclick="closeNav()">About Me</a>
-      <a href="pricepage.html" onclick="closeNav()">Price List</a>
-      <a href="catalog.html" onclick="closeNav()">The Cat-alogue</a>
-      <a href="contact.html" onclick="closeNav()">Contact</a>
-    </div>
-  </div>
+    <script>
+      fetch("header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header").innerHTML = data;
+        })
+        .catch((error) => console.error("Error loading header:", error));
+    </script>
 
-  <!-- Menu Button -->
-  <div id="menuBtn" onclick="openNav()" aria-label="Open menu" role="button" tabindex="0" style="font-size: 30px; cursor: pointer; margin: 15px;">
-    &#9776; Menu
-  </div>
-
-  <!-- Navigation Bar -->
-  <div class="w3-bar w3-white w3-text-black">
-    <h2 class="w3-left w3-tag w3-pale-red w3-round" style="margin-left: 175px;">Paws At Yours</h2>
-    <a href="contact.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">CONTACT</a>
-    <a href="catalog.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">THE CAT-ALOGUE</a>
-    <a href="pricepage.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">PRICE LIST</a>
-    <a href="AboutMe.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">ABOUT ME</a>
-    <a href="index.html" class="w3-hide-small w3-bar-item w3-button w3-right" style="margin-top: 10px;">HOME</a>
-  </div>
-
-  <!-- Page Content -->
-  <div class="w3-content" style="max-width: 1600px;">
-    <header class="w3-display-container w3-wide" style="padding-bottom: 1px;" id="Home">
-      <img class="w3-image" src="images/Main Photo.jpg" width="1600" height="1060" alt="Paws at Yours" />
-      <div class="w3-display-left w3-padding-large">
-        <h1 class="w3-text-white">Paws at Yours</h1>
-        <h1 class="w3-jumbo w3-text-white w3-hide-small"><b>Cat Sitting</b></h1>
-        <button class="w3-button w3-round w3-padding-large w3-large w3-hover-opacity-off w3-text-white w3-border book-button">
-          <a href="contact.html" style="color: inherit; text-decoration: none;">BOOK NOW</a>
-        </button>
-      </div>
-    </header>
-
-          <p style="font-size: 20px;" position="center">
-            To look at prices <a href="pricepage.html" style="color: #f15b5b; font-weight: bold;">click here</a>.
-          </p>
-
-    <!-- Customer Gallery -->
-    <section class="w3-container">
-      <h2 class="w3-center" style="margin-bottom: 20px; margin-top: -20px;" >Our Happy Customers</h2>
-      
-  <a href="catalog.html" style="display: block;">
-        <div class="slideshow-container">
-          <!-- Each image below should be inside its own div -->
-              <div class="mySlides fade">
-        <img src="images/Basil.jpg" style="width:100%" />
-      </div>
-  
-      <div class="mySlides fade">
-        <img src="images/Coco.jpg" style="width:100%" />
-      </div>
-  
-      <div class="mySlides fade">
-        <img src="images/Chilli.jpg" style="width:100%" />
-      </div>
-  
-      <div class="mySlides fade">
-        <img src="images/Cookie.jpg" style="width:100%"/>
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Ghost.jpg" style="width:100%"/>
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Indie.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Keira.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Lilo.jpg" style="width:100%"/>
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Mali.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Max.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Merlin.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Mitch And Daisy.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Pepper.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Puss Puss.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Roger and Raymond.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Rothko.jpg" style="width:100%"  />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Saffron.jpg" style="width:100%"  />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Sage.jpg" style="width:100%"/>
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Stitch.jpg" style="width:100%"/>
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Stormi&Kittens.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Tabby.jpg" style="width:100%"  />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Toby.jpg" style="width:100%"/>
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Tonka.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Turbo.jpg" style="width:100%" />
-      </div>
-  
-       <div class="mySlides fade">
-        <img src="images/Twiggy.jpg" style="width:100%"  />
+    <div class="page-container">
+      <!-- Hero Section -->
+      <header class="hero-section" id="home">
+        <div class="hero-text">
+          <h1 class="hero-title">Paws at Yours</h1>
+          <h2 class="hero-subtitle"><b>Cat Sitting</b></h2>
+          <button class="book-button">
+            <a href="contact.html"> 🐾 BOOK NOW</a>
+          </button>
         </div>
-  </a>
-       
-      <br />
-      <div style="text-align:center">
-        <!-- Adjust number of dots based on the number of slides -->
-         <span class="dot" onclick="currentSlide(1)"></span>
+      </header>
+
+      <!-- <p class="price-link-text">
+        To look at prices
+        <a href="pricepage.html" class="price-link">click here</a>.
+      </p> -->
+
+      <!-- Customer Gallery -->
+      <section class="customer-gallery">
+        <h2 class="gallery-heading">Our Happy Customers</h2>
+
+        <a href="catalog.html" class="gallery-link">
+          <div class="slideshow">
+            <div class="mySlides">
+              <img src="images/Basil.jpg" alt="Basil" />
+            </div>
+            <div class="mySlides"><img src="images/Coco.jpg" alt="Coco" /></div>
+            <div class="mySlides">
+              <img src="images/Chilli.jpg" alt="Chilli" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Cookie.jpg" alt="Cookie" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Ghost.jpg" alt="Ghost" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Indie.jpg" alt="Indie" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Keira.jpg" alt="Keira" />
+            </div>
+            <div class="mySlides"><img src="images/Lilo.jpg" alt="Lilo" /></div>
+            <div class="mySlides"><img src="images/Mali.jpg" alt="Mali" /></div>
+            <div class="mySlides"><img src="images/Max.jpg" alt="Max" /></div>
+            <div class="mySlides">
+              <img src="images/Merlin.jpg" alt="Merlin" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Mitch And Daisy.jpg" alt="Mitch and Daisy" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Pepper.jpg" alt="Pepper" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Puss Puss.jpg" alt="Puss Puss" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Roger and Raymond.jpg" alt="Roger and Raymond" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Rothko.jpg" alt="Rothko" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Saffron.jpg" alt="Saffron" />
+            </div>
+            <div class="mySlides"><img src="images/Sage.jpg" alt="Sage" /></div>
+            <div class="mySlides">
+              <img src="images/Stitch.jpg" alt="Stitch" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Stormi&Kittens.jpg" alt="Stormi and Kittens" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Tabby.jpg" alt="Tabby" />
+            </div>
+            <div class="mySlides"><img src="images/Toby.jpg" alt="Toby" /></div>
+            <div class="mySlides">
+              <img src="images/Tonka.jpg" alt="Tonka" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Turbo.jpg" alt="Turbo" />
+            </div>
+            <div class="mySlides">
+              <img src="images/Twiggy.jpg" alt="Twiggy" />
+            </div>
+          </div>
+        </a>
+
+        <div class="dot-container">
+          <!-- 26 dots -->
+          <span class="dot" onclick="currentSlide(1)"></span>
           <span class="dot" onclick="currentSlide(2)"></span>
           <span class="dot" onclick="currentSlide(3)"></span>
           <span class="dot" onclick="currentSlide(4)"></span>
@@ -262,17 +204,13 @@
           <span class="dot" onclick="currentSlide(24)"></span>
           <span class="dot" onclick="currentSlide(25)"></span>
           <span class="dot" onclick="currentSlide(26)"></span>
-      </div>
+        </div>
 
-       
-    </section>
-
-    <div class="slideshow-arrows">
-          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="slideshow-arrows">
+          <a class="arrow prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="arrow next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+      </section>
     </div>
-   
-  </div>
-
-</body>
+  </body>
 </html>
