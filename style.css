@@ -941,13 +941,14 @@ textarea.form-input {
   .photo-pair,
   .photo-trio,
   .catalog-image,
-  .price-table-wrapper {
+  .price-table-wrapper,
+  .customer-entry,
+  .cat-profile {
     width: 95%;
     max-width: 600px;
     margin: 20px auto; /* equal top/bottom & left/right margins */
     padding: 25px 15px;
     box-sizing: border-box;
-    display: block;
   }
 }
 
