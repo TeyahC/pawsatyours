@@ -869,10 +869,14 @@ textarea.form-input {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
   .date-group label,
   .date-group input[type="date"] {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   textarea.form-input {
@@ -883,10 +887,16 @@ textarea.form-input {
   }
 
   /* ===== FORCE VERTICAL SCROLL ONLY ===== */
-  body,
-  html {
-    overflow-x: hidden; /* no horizontal scroll except tables */
-  }
+-  body,
+-  html {
+-    overflow-x: hidden; /* no horizontal scroll except tables */
+-  }
++  /* Allow horizontal scrolling inside child containers (price table etc.)
++     Do not globally block overflow-x — that prevents inner horizontal scroll on some phones. */
++  body,
++  html {
++    overflow-x: visible;
++  }
 
   /* ===== MOBILE BACKGROUND FIX ===== */
   body {
@@ -904,9 +914,35 @@ textarea.form-input {
     background-size: cover;
     background-repeat: no-repeat;
   }
-}
 
-/* General Fixes */
-body {
-  padding-top: 90px;
-}
+  /* ===== MOBILE CENTERING & SAFETY FIXES ===== */
++  /* Ensure key containers are truly centered and respect padding */
++  .about-section,
++  .quote-form-container,
++  .photo-pair,
++  .photo-trio,
++  .catalog-image,
++  .price-table-wrapper {
++    margin-left: auto;
++    margin-right: auto;
++    box-sizing: border-box;
++  }
++
++  /* Make the table use natural width so horizontal scroll happens inside wrapper */
++  .price-table-wrapper {
++    overflow-x: auto;
++    -webkit-overflow-scrolling: touch;
++    width: 100%;
++  }
++  .price-table {
++    width: max-content;
++    min-width: 600px;
++  }
++
++  /* Make sure quote form and its inputs never overflow */
++  .quote-form-container,
++  .quote-form-container input,
++  .quote-form-container textarea {
++    box-sizing: border-box;
++  }
+ }
