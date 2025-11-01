@@ -360,8 +360,9 @@ header.navbar {
 .section-subtitle {
   text-align: center;
   font-style: italic;
-  color: #729ea1;
+  color: #120d31;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .cat-profile {
@@ -827,9 +828,9 @@ textarea.form-input {
 
   /* ===== PRICE LIST FIX ===== */
   .price-table-wrapper {
-    width: 90%;
-    margin: 20px auto;
-    padding: 15px;
+    width: 95%;
+    margin: 10px auto;
+    padding: 10px;
     background-color: #efe9f4;
     border-radius: 10px;
     overflow-x: auto; /* enable horizontal scroll */
@@ -855,12 +856,26 @@ textarea.form-input {
     white-space: nowrap; /* prevents cells from wrapping text */
   }
 
+  .price-note {
+    width: 95%;
+    padding: 12px 15px;
+    box-sizing: border-box;
+    overflow-wrap: break-word; /* ✅ ensures text wraps */
+    word-wrap: break-word;
+    white-space: normal;
+  }
+
+  .price-note p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
   .quote-form-container {
-    width: 90%;
+    width: 95%;
     margin: 20px auto;
     position: static;
     transform: none;
-    padding: 20px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -878,12 +893,12 @@ textarea.form-input {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
+    width: 70%;
     box-sizing: border-box;
   }
   .date-group label,
   .date-group input[type="date"] {
-    width: 100%;
+    width: 70%;
     max-width: 100%;
     box-sizing: border-box;
   }
@@ -925,8 +940,10 @@ textarea.form-input {
   .photo-trio,
   .catalog-image,
   .price-table-wrapper {
-    margin-left: auto;
-    margin-right: auto;
+    width: 95%;
+    max-width: 600px;
+    margin: 20px auto; /* equal top/bottom & left/right margins */
+    padding: 25px 15px;
     box-sizing: border-box;
   }
 }
