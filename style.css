@@ -946,6 +946,7 @@ textarea.form-input {
     margin: 20px auto; /* equal top/bottom & left/right margins */
     padding: 25px 15px;
     box-sizing: border-box;
+    display: block;
   }
 }
 
