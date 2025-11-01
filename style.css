@@ -787,7 +787,7 @@ textarea.form-input {
     flex-direction: column;
     text-align: center;
     width: 95%;
-    margin: 20px auto; /* centers with top/bottom margin */
+    margin: 20px auto;
   }
   .cat-image,
   .cat-info,
@@ -821,7 +821,7 @@ textarea.form-input {
   .about-section {
     width: 95%;
     max-width: 600px;
-    margin: 20px auto; /* equal top/bottom & left/right margins */
+    margin: 20px auto;
     padding: 25px 15px;
     box-sizing: border-box;
   }
@@ -833,16 +833,16 @@ textarea.form-input {
     padding: 10px;
     background-color: #efe9f4;
     border-radius: 10px;
-    overflow-x: auto; /* enable horizontal scroll */
-    overflow-y: hidden; /* prevent vertical scrollbars */
-    white-space: nowrap; /* prevent wrapping inside */
-    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-    display: block; /* ensures scroll container behaves */
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    display: block;
   }
 
   .price-table {
-    min-width: 700px; /* ensures table is wider than container */
-    width: auto; /* allows table to expand naturally */
+    min-width: 700px;
+    width: auto;
     border-collapse: collapse;
     margin: 0 auto;
   }
@@ -853,14 +853,14 @@ textarea.form-input {
     text-align: center;
     border: 1px solid #ccc;
     font-size: 1rem;
-    white-space: nowrap; /* prevents cells from wrapping text */
+    white-space: nowrap;
   }
 
   .price-note {
     width: 95%;
     padding: 12px 15px;
     box-sizing: border-box;
-    overflow-wrap: break-word; /* ✅ ensures text wraps */
+    overflow-wrap: break-word;
     word-wrap: break-word;
     white-space: normal;
     margin-top: 15px;
@@ -914,7 +914,7 @@ textarea.form-input {
   /* Do not globally hide horizontal overflow — allow inner wrappers to scroll */
   body,
   html {
-    overflow-x: hidden; /* ✅ prevents horizontal scroll */
+    overflow-x: hidden;
     width: 100%;
   }
 
@@ -935,21 +935,55 @@ textarea.form-input {
     background-repeat: no-repeat;
   }
 
-  /* Ensure key containers are centered and don't overflow */
+  /* ---------- CENTERING FIXES (media-only, minimal) ---------- */
+  /* remove floats and force auto horizontal margins so items sit centrally */
+  .customer-gallery {
+    float: none;
+    width: 95%;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .cat-profile,
+  .customer-entry,
   .about-section,
   .quote-form-container,
   .photo-pair,
   .photo-trio,
   .catalog-image,
   .price-table-wrapper,
-  .customer-entry,
-  .cat-profile {
+  .slideshow {
     width: 95%;
-    max-width: 600px;
-    margin: 20px auto; /* equal top/bottom & left/right margins */
-    padding: 25px 15px;
+    max-width: 900px;
+    margin: 20px auto;
     box-sizing: border-box;
   }
+
+  /* make images behave and not push layout */
+  .cat-image,
+  .customer-image,
+  .customer-image-group img,
+  .catalog-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* ensure no floats remain on these blocks */
+  .cat-profile,
+  .customer-entry {
+    float: none;
+  }
+
+  /* keep horizontal overflow hidden while allowing inner scroll on tables */
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
+  /* end centering fixes */
 }
 
 /* General Fixes */
