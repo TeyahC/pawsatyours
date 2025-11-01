@@ -913,7 +913,8 @@ textarea.form-input {
   /* Do not globally hide horizontal overflow — allow inner wrappers to scroll */
   body,
   html {
-    overflow-x: visible;
+    overflow-x: hidden; /* ✅ prevents horizontal scroll */
+    width: 100%;
   }
 
   /* ===== MOBILE BACKGROUND FIX ===== */
