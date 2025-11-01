@@ -822,46 +822,55 @@ textarea.form-input {
     max-width: 600px;
     margin: 20px auto; /* equal top/bottom & left/right margins */
     padding: 25px 15px;
+    box-sizing: border-box;
   }
 
-  /* ===== PRICE TABLE ===== */
+  /* ===== PRICE LIST FIX ===== */
   .price-table-wrapper {
-    width: 95%;
+    width: 90%;
     margin: 20px auto;
     padding: 15px;
-    overflow-x: auto; /* horizontal scroll works */
-    -webkit-overflow-scrolling: touch;
+    background-color: #efe9f4;
     border-radius: 10px;
-    white-space: nowrap; /* ensures horizontal scroll */
-  }
-  .price-table {
-    min-width: 700px;
-    width: auto;
-  }
-  .price-table th,
-  .price-table td {
-    padding: 8px 10px;
-    font-size: 0.9rem;
-    white-space: nowrap;
+    overflow-x: auto; /* enable horizontal scroll */
+    overflow-y: hidden; /* prevent vertical scrollbars */
+    white-space: nowrap; /* prevent wrapping inside */
+    -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+    display: block; /* ensures scroll container behaves */
   }
 
-  /* ===== QUOTE FORM ===== */
+  .price-table {
+    min-width: 700px; /* ensures table is wider than container */
+    width: auto; /* allows table to expand naturally */
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 10px 12px;
+    text-align: center;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    white-space: nowrap; /* prevents cells from wrapping text */
+  }
+
   .quote-form-container {
-    width: 95%;
-    max-width: 700px;
-    margin: 20px auto; /* centers container */
+    width: 90%;
+    margin: 20px auto;
+    position: static;
+    transform: none;
     padding: 20px;
+    background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
   }
   .quote-form-container input,
-  .quote-form-container textarea {
+  .quote-form-container textarea,
+  .quote-form-container select {
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 6px;
+    max-width: 100%;
   }
 
   /* Stack From / To date fields */
@@ -886,17 +895,11 @@ textarea.form-input {
     white-space: pre-wrap;
   }
 
-  /* ===== FORCE VERTICAL SCROLL ONLY ===== */
--  body,
--  html {
--    overflow-x: hidden; /* no horizontal scroll except tables */
--  }
-+  /* Allow horizontal scrolling inside child containers (price table etc.)
-+     Do not globally block overflow-x — that prevents inner horizontal scroll on some phones. */
-+  body,
-+  html {
-+    overflow-x: visible;
-+  }
+  /* Do not globally hide horizontal overflow — allow inner wrappers to scroll */
+  body,
+  html {
+    overflow-x: visible;
+  }
 
   /* ===== MOBILE BACKGROUND FIX ===== */
   body {
@@ -915,34 +918,20 @@ textarea.form-input {
     background-repeat: no-repeat;
   }
 
-  /* ===== MOBILE CENTERING & SAFETY FIXES ===== */
-+  /* Ensure key containers are truly centered and respect padding */
-+  .about-section,
-+  .quote-form-container,
-+  .photo-pair,
-+  .photo-trio,
-+  .catalog-image,
-+  .price-table-wrapper {
-+    margin-left: auto;
-+    margin-right: auto;
-+    box-sizing: border-box;
-+  }
-+
-+  /* Make the table use natural width so horizontal scroll happens inside wrapper */
-+  .price-table-wrapper {
-+    overflow-x: auto;
-+    -webkit-overflow-scrolling: touch;
-+    width: 100%;
-+  }
-+  .price-table {
-+    width: max-content;
-+    min-width: 600px;
-+  }
-+
-+  /* Make sure quote form and its inputs never overflow */
-+  .quote-form-container,
-+  .quote-form-container input,
-+  .quote-form-container textarea {
-+    box-sizing: border-box;
-+  }
- }
+  /* Ensure key containers are centered and don't overflow */
+  .about-section,
+  .quote-form-container,
+  .photo-pair,
+  .photo-trio,
+  .catalog-image,
+  .price-table-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+}
+
+/* General Fixes */
+body {
+  padding-top: 90px;
+}
