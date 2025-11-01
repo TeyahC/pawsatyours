@@ -863,6 +863,7 @@ textarea.form-input {
     overflow-wrap: break-word; /* ✅ ensures text wraps */
     word-wrap: break-word;
     white-space: normal;
+    margin-top: 15px;
   }
 
   .price-note p {
