@@ -65,43 +65,49 @@
 
           <!-- Quote Form -->
           <div class="quote-form-container">
-            <h2 class="form-title">Get a Quote</h2>
-            <form
-              action="mailto:teyahc@hotmail.com"
-              method="post"
-              enctype="text/plain"
-              class="quote-form"
-            >
-              <input
-                class="form-input"
-                type="text"
-                placeholder="Name"
-                required
-                name="Name"
-              />
-              <input
-                class="form-input"
-                type="text"
-                placeholder="Service"
-                required
-                name="Service"
-              />
-              <div class="date-group">
-                <label for="start-date">From:</label>
-                <input type="date" id="start-date" name="Start Date" required />
+  <h2 class="form-title">Get a Quote</h2>
+  <form 
+    name="quote" 
+    method="POST" 
+    data-netlify="true" 
+    action="/thank-you.html" 
+    class="quote-form"
+  >
+    <!-- Required hidden input for Netlify forms -->
+    <input type="hidden" name="form-name" value="quote" />
 
-                <label for="end-date">To:</label>
-                <input type="date" id="end-date" name="End Date" required />
-              </div>
-              <textarea
-                class="form-input"
-                placeholder="Message"
-                required
-                name="Message"
-                rows="4"
-              ></textarea>
-              <button class="form-button" type="submit">Submit</button>
-            </form>
+    <input
+      class="form-input"
+      type="text"
+      placeholder="Name"
+      required
+      name="Name"
+    />
+    <input
+      class="form-input"
+      type="text"
+      placeholder="Service"
+      required
+      name="Service"
+    />
+    <div class="date-group">
+      <label for="start-date">From:</label>
+      <input type="date" id="start-date" name="Start Date" required />
+
+      <label for="end-date">To:</label>
+      <input type="date" id="end-date" name="End Date" required />
+    </div>
+    <textarea
+      class="form-input"
+      placeholder="Message"
+      required
+      name="Message"
+      rows="4"
+    ></textarea>
+    <button class="form-button" type="submit">Submit</button>
+  </form>
+</div>
+
           </div>
         </div>
       </section>
