@@ -226,8 +226,9 @@ header.navbar {
 
 /* Slideshow container fixed size */
 .slideshow {
-  width: 70%; /* or a fixed pixel width like 800px */
-  height: 400px; /* set height to match largest image */
+  width: 70%;
+  max-width: 900px; /* ensures it doesn’t get too wide on big screens */
+  height: 400px;
   margin: auto;
   position: relative;
   overflow: hidden;
