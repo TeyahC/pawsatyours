@@ -4,10 +4,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  transform: scale(0.9); /* scales to 90% */
-  transform-origin: top left; /* keeps it aligned */
 }
-
 html {
   scroll-behavior: smooth;
 }
