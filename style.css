@@ -1029,5 +1029,37 @@ textarea.form-input {
     width: 100%;
   }
 
+  /* ===== REFERENCES MOBILE FIX ===== */
+  .references-section {
+    padding: 20px 10px;
+    text-align: center; /* center content for small screens */
+  }
+
+  .reference-card {
+    flex-direction: column !important; /* stack image and text */
+    width: 95% !important;
+    margin: 15px auto;
+    gap: 15px !important;
+  }
+
+  .reference-image {
+    width: 100% !important;
+    max-width: 300px; /* limit image width */
+    margin: 0 auto;
+  }
+
+  .reference-text {
+    width: 100% !important;
+  }
+
+  .reference-text p {
+    text-align: left; /* optional: keep text left-aligned for readability */
+    font-size: 0.95rem;
+  }
+
+  .reference-card:nth-child(even) {
+    flex-direction: column !important; /* undo row-reverse on mobile */
+  }
+
   /* end centering fixes */
 }
