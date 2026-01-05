@@ -698,7 +698,7 @@ textarea.form-input {
 /* ===== REFERENCES PAGE ===== */
 .references-section {
   color: #204b57;
-  padding: 54px 18px; /* 60px 20px → 54px 18px */
+  padding: 54px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -709,14 +709,14 @@ textarea.form-input {
   display: flex;
   align-items: flex-start;
   background-color: #efe9f4;
-  border-radius: 10.8px; /* 12px → 10.8px */
-  padding: 22.5px; /* 25px → 22.5px */
-  margin-bottom: 36px; /* 40px → 36px */
-  width: 72%; /* 80% → 72% */
-  max-width: 900px; /* 1000px → 900px */
+  border-radius: 10.8px;
+  padding: 22.5px;
+  margin-bottom: 36px;
+  width: 72%;
+  max-width: 900px;
   box-shadow: 0 3.6px 10.8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.27s ease, box-shadow 0.27s ease; /* 0.3s → 0.27s */
-  gap: 22.5px; /* 25px → 22.5px */
+  transition: transform 0.27s ease, box-shadow 0.27s ease;
+  gap: 22.5px;
 }
 
 .reference-card:nth-child(even) {
@@ -724,34 +724,51 @@ textarea.form-input {
 }
 
 .reference-card:hover {
-  transform: translateY(-2.7px); /* -3px → -2.7px */
+  transform: translateY(-2.7px);
   box-shadow: 0 7.2px 14.4px rgba(0, 0, 0, 0.2);
 }
 
-.reference-image {
-  width: 27%; /* 30% → 27% */
-  max-width: 252px; /* 280px → 252px */
-  border-radius: 9px; /* 10px → 9px */
-  object-fit: cover;
-  box-shadow: 0 3.6px 9px rgba(0, 0, 0, 0.2); /* 0 4px 10px → 0 3.6px 9px */
+/* Reference images container */
+.reference-images {
+  display: flex;
+  gap: 0; /* remove gap between images */
 }
 
+/* Single image inside reference-images */
+.reference-images img:only-child {
+  max-width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 9px;
+  box-shadow: 0 3.6px 9px rgba(0, 0, 0, 0.2);
+}
+
+/* Two or three images */
+.reference-images img:not(:only-child) {
+  flex: 1; /* equal space */
+  height: 200px;
+  object-fit: cover;
+  border-radius: 9px;
+  box-shadow: 0 3.6px 9px rgba(0, 0, 0, 0.2);
+}
+
+/* reference text styling */
 .reference-text {
-  width: 58.5%; /* 65% → 58.5% */
+  width: 70%;
 }
 
 .reference-text p {
-  font-size: 0.945rem; /* 1.05rem → 0.945rem */
-  line-height: 1.44; /* 1.6 → 1.44 */
+  font-size: 0.945rem;
+  line-height: 1.44;
   color: #204b57;
-  margin-bottom: 10.8px; /* 12px → 10.8px */
+  margin-bottom: 10.8px;
 }
 
 .reference-name {
   font-weight: bold;
   color: #ff4782;
-  margin-top: 9px; /* 10px → 9px */
-  font-size: 0.99rem; /* 1.1rem → 0.99rem */
+  margin-top: 9px;
+  font-size: 0.99rem;
 }
 
 @media (max-width: 768px) {
@@ -1010,100 +1027,58 @@ textarea.form-input {
   html {
     overflow-x: hidden;
   }
-
-  /* ===== REFERENCES PAGE ===== */
   .references-section {
-    color: #204b57;
-    padding: 54px 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
+    padding: 20px 10px;
+    text-align: center;
   }
 
   .reference-card {
-    display: flex;
-    align-items: flex-start;
-    background-color: #efe9f4;
-    border-radius: 10.8px;
-    padding: 22.5px;
-    margin-bottom: 36px;
-    width: 72%;
-    max-width: 900px;
-    box-shadow: 0 3.6px 10.8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.27s ease, box-shadow 0.27s ease;
-    gap: 22.5px;
+    flex-direction: column !important;
+    width: 95% !important;
+    margin: 15px auto;
+    gap: 15px !important;
+    padding: 20px 15px;
   }
 
   .reference-card:nth-child(even) {
-    flex-direction: row-reverse;
+    flex-direction: column !important;
   }
 
-  .reference-card:hover {
-    transform: translateY(-2.7px);
-    box-shadow: 0 7.2px 14.4px rgba(0, 0, 0, 0.2);
+  .reference-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* center all images */
+    gap: 10px;
+    margin-bottom: 10px;
   }
 
-  .reference-image {
-    width: 27%;
-    max-width: 252px;
-    border-radius: 9px;
-    object-fit: cover;
-    box-shadow: 0 3.6px 9px rgba(0, 0, 0, 0.2);
+  /* Single image */
+  .reference-images img:only-child {
+    width: 80%; /* a bit smaller than full width */
+    height: auto;
+  }
+
+  /* Two images */
+  .reference-images img:nth-child(2):last-child,
+  .reference-images img:first-child:nth-last-child(2) {
+    width: 48%; /* two images side by side */
+    height: auto;
+  }
+
+  /* Three images */
+  .reference-images img:nth-child(3):last-child,
+  .reference-images img:first-child:nth-last-child(3),
+  .reference-images img:nth-child(2) {
+    width: 30%; /* three images side by side */
+    height: auto;
   }
 
   .reference-text {
-    width: 58.5%;
+    width: 100% !important;
   }
 
   .reference-text p {
-    font-size: 0.945rem;
-    line-height: 1.44;
-    color: #204b57;
-    margin-bottom: 10.8px;
+    text-align: left;
+    font-size: 0.95rem;
   }
-
-  .reference-name {
-    font-weight: bold;
-    color: #ff4782;
-    margin-top: 9px;
-    font-size: 0.99rem;
-  }
-
-  /* ===== REFERENCES MOBILE ===== */
-  @media (max-width: 768px) {
-    .references-section {
-      padding: 20px 10px;
-      text-align: center;
-    }
-
-    .reference-card {
-      flex-direction: column !important;
-      width: 95% !important;
-      margin: 15px auto;
-      gap: 15px !important;
-      padding: 20px 15px;
-    }
-
-    .reference-card:nth-child(even) {
-      flex-direction: column !important;
-    }
-
-    .reference-image {
-      width: 100% !important;
-      max-width: 300px;
-      margin: 0 auto;
-    }
-
-    .reference-text {
-      width: 100% !important;
-    }
-
-    .reference-text p {
-      text-align: left;
-      font-size: 0.95rem;
-    }
-  }
-
-  /* end centering fixes */
 }
