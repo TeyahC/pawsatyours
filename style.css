@@ -1011,54 +1011,98 @@ textarea.form-input {
     overflow-x: hidden;
   }
 
-  .reference-card {
-    flex-direction: column;
-    text-align: center;
-    width: 95%;
-    margin: 20px auto;
-    padding: 20px 15px;
-  }
-
-  .reference-image {
-    width: 100%;
-    max-width: 90%;
-    margin-bottom: 15px;
-  }
-
-  .reference-text {
-    width: 100%;
-  }
-
-  /* ===== REFERENCES MOBILE FIX ===== */
+  /* ===== REFERENCES PAGE ===== */
   .references-section {
-    padding: 20px 10px;
-    text-align: center; /* center content for small screens */
+    color: #204b57;
+    padding: 54px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
   }
 
   .reference-card {
-    flex-direction: column !important; /* stack image and text */
-    width: 95% !important;
-    margin: 15px auto;
-    gap: 15px !important;
-  }
-
-  .reference-image {
-    width: 100% !important;
-    max-width: 300px; /* limit image width */
-    margin: 0 auto;
-  }
-
-  .reference-text {
-    width: 100% !important;
-  }
-
-  .reference-text p {
-    text-align: left; /* optional: keep text left-aligned for readability */
-    font-size: 0.95rem;
+    display: flex;
+    align-items: flex-start;
+    background-color: #efe9f4;
+    border-radius: 10.8px;
+    padding: 22.5px;
+    margin-bottom: 36px;
+    width: 72%;
+    max-width: 900px;
+    box-shadow: 0 3.6px 10.8px rgba(0, 0, 0, 0.15);
+    transition: transform 0.27s ease, box-shadow 0.27s ease;
+    gap: 22.5px;
   }
 
   .reference-card:nth-child(even) {
-    flex-direction: column !important; /* undo row-reverse on mobile */
+    flex-direction: row-reverse;
+  }
+
+  .reference-card:hover {
+    transform: translateY(-2.7px);
+    box-shadow: 0 7.2px 14.4px rgba(0, 0, 0, 0.2);
+  }
+
+  .reference-image {
+    width: 27%;
+    max-width: 252px;
+    border-radius: 9px;
+    object-fit: cover;
+    box-shadow: 0 3.6px 9px rgba(0, 0, 0, 0.2);
+  }
+
+  .reference-text {
+    width: 58.5%;
+  }
+
+  .reference-text p {
+    font-size: 0.945rem;
+    line-height: 1.44;
+    color: #204b57;
+    margin-bottom: 10.8px;
+  }
+
+  .reference-name {
+    font-weight: bold;
+    color: #ff4782;
+    margin-top: 9px;
+    font-size: 0.99rem;
+  }
+
+  /* ===== REFERENCES MOBILE ===== */
+  @media (max-width: 768px) {
+    .references-section {
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    .reference-card {
+      flex-direction: column !important;
+      width: 95% !important;
+      margin: 15px auto;
+      gap: 15px !important;
+      padding: 20px 15px;
+    }
+
+    .reference-card:nth-child(even) {
+      flex-direction: column !important;
+    }
+
+    .reference-image {
+      width: 100% !important;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    .reference-text {
+      width: 100% !important;
+    }
+
+    .reference-text p {
+      text-align: left;
+      font-size: 0.95rem;
+    }
   }
 
   /* end centering fixes */
